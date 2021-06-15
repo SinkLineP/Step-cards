@@ -37,7 +37,13 @@ width: 20px;
     margin-left: 1100px;
 
 }
-
+.btn-form{
+    width: 140px;
+    height: 60px;
+margin-left: 145px;
+margin-top: 30px;
+margin-bottom: -40px;
+}
 .createvisit {
     position: absolute; 
     width: 140px;
@@ -51,6 +57,8 @@ width: 20px;
 }
 
 /* FILTER */
+
+
 
 .filter .filter-input {
     margin-left: 30%;
