@@ -1,0 +1,30 @@
+/* FILTER */
+
+.filter .filter-input {
+    margin-left: 30%;
+}
+
+.filter .filter-one {
+    margin-left: 50px;
+}
+
+.filter .filter-btn-all {
+    width: 159px;
+    text-align: right;
+}
+
+.filter .filter-two {
+    margin-left: 50px;
+}
+
+.filter .filter-search {
+    margin-left: 50px;
+}
+
+.filter .filter-input input {
+    width: 300px;
+    height: 38.5px;
+}
+
+/* FORM */
+
