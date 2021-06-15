@@ -1,3 +1,41 @@
+
+/* HEADER */
+
+.header{
+    background-color: rgba(51, 51, 51, 0.849);
+    overflow: hidden;
+    height: 80px;
+}
+
+
+.header a {
+    font-family: Montserrat, sans-serif;
+    color: #f2f2f2;
+    /* padding:  20%; */
+   
+    text-decoration: none;
+    /* font-size: 47px; */
+  }
+  .header a:hover {
+    color: rgb(184, 117, 117);
+  }
+
+
+  .size-icon{
+    transform: translateY(9px);
+    margin-left: 30px;
+      width: 60px;
+      height: 60px;
+  }
+
+  .btn{
+    transform: translateY(9px);
+    width: 140px;
+    height: 60px;  
+    margin-left: 1090px;
+
+}
+
 /* FILTER */
 
 .filter .filter-input {
