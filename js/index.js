@@ -1,5 +1,3 @@
-
-
 import Visit from "./modules/Visit.js"
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
@@ -20,12 +18,25 @@ loginModal.addEventListener("click", () => {
 
 
 visitModal.addEventListener("click", () => {
+  
    root.append(modal.render(visit.form))
-   modal.show()
-   document.getElementById("select_doc").addEventListener("change", function () {
-      document.getElementById('div_doc').innerHTML = "Врач: " + this.value;
-   });
- 
-   
-})
+   modal.show();
 
+   const select = document.querySelector('select');
+   const content = {};
+
+   [...select.querySelectorAll('option')]
+   .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+
+   const onChange = value => {
+      Object.keys(content).forEach(id => {
+         content[id].style.display = value === id ? 'block' : 'none';
+      });
+   }
+
+   select.addEventListener('change', e => onChange(e.target.value));
+   onChange('card');
+
+
+
+})

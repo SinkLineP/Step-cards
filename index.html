@@ -81,13 +81,12 @@
         <template id="visit-template">
             <form id="visit-form">
                 <p>Выберите врача: 
-                <select id="select_doc">
-                    <option value="Дмитрий Сергеевич">Кардиолог</option>
-                    <option value="Оксана Степановна" >Стоматолог</option>
-                    <option value="Лариса Андреевна" >Терапевт</option>
+                <select>
+                    <option value="card">Кардиолог</option>
+                    <option value="dent">Стоматолог</option>
+                    <option value="therap">Терапевт</option>
                 </select>
             </p>
-                <div id="div_doc">Врач: Дмитрий Сергеевич</div>
                 <br />
                 <p>Цель визита: </p>
                 <p></p><textarea name="comment"></textarea></p>
@@ -99,7 +98,7 @@
                     <option>приоритетная</option>
                     <option>неотложная</option>
                 </select> </p>  
-                <br /> <br />
+                
                 <p>Ваше имя:
                     <input type="text" size="29">
                 </p>
@@ -109,9 +108,8 @@
                 <p>Ваше отчество:
                     <input type="text" size="25">
                 </p>
-                <br />
     <!-- ДЛЯ КАРДИОЛОГА================================== -->
-                <div id="div_card">
+                <div id="card">
                     <p>Обычное давление:
                         <input type="text" size="15px">
                     </p>
@@ -128,24 +126,24 @@
       <!-- ======================================================== -->
 
       <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
-
+<div id="dent">
       <p>Дата последнего посещения:</p>
 
       <input type="date" id="start" name="trip-start"
              value="2021-06-15"
              min="2021-01-01" max="2021-12-31">
       
-
-<br/><br/>
+            </div>
 
 
       <!-- =========================================================== -->
 
    <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+   <div id="therap">
    <p id="therapist">Возраст:
     <input type="text" size="15px">
 </p>
-
+</div>
    <!-- =========================================================== -->
 
 
