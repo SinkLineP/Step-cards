@@ -1,4 +1,3 @@
-;
 
 export default class LogIn {
    constructor() {
@@ -12,13 +11,13 @@ export default class LogIn {
    request(reqType, body) {}
    _createAddPostForm() {
       const formTemplate = document.getElementById("form-template");
-      const addPostForm =
-         formTemplate.content.children["post-form"].cloneNode(true);
-      console.log(addPostForm);
+      const addPostForm = formTemplate.content.children["login-form"].cloneNode(true);
 
       const submit = Array.from(addPostForm).filter((el) => {
-         return el.type === "submit";
+         console.log(el.type === "submit");
+         // return el.type === "submit";
       })[0];
+
       addPostForm.classList.add("col-12", "mx-auto", "my-5");
 
       addPostForm.addEventListener("submit", () => {});
