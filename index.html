@@ -18,8 +18,11 @@
                 <img src="./image/icon.png" class="size-icon" />
             </a>
             <a><button type="button" class="btn btn-outline-success login" id="ModalLogin">Вход</button></a>
-            <a class="hide-btn"><button type="button" class="btn btn-outline-danger createvisit">Создать
-                    визит</button></a>
+            <!-- <a class="hide-btn"> -->
+                <br><a>
+                    <button type="button" class="btn btn-outline-danger createvisit" id="ModalVisit">Создать визит</button>
+                </a>
+            <!-- </a> -->
         </div>
     </section>
     <section class="filter">
@@ -71,9 +74,18 @@
                 <input type="email" id="email" size="39" required>
                 <br/>  <br/>     <label for="email">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
-                <button type="button" class="btn btn-outline-success btn-form">Вход</button>
+                <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
             </form>
-       
+        </template>
+        <!-- visit -->
+        <template id="visit-template">
+            <form id="visit-form">
+                <label for="email">Your emadsdsdsdsdil: </label>
+                <input type="email" id="email" size="39" required>
+                <br/>  <br/>     <label for="email">Your password: </label>
+                <input id="userPassword" type="password" size="39" required>
+                <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
+            </form>
         </template>
 
     </section>
