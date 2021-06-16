@@ -1,3 +1,5 @@
+
+
 import Visit from "./modules/Visit.js"
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
@@ -15,7 +17,15 @@ loginModal.addEventListener("click", () => {
    modal.show();
 });
 
+
+
 visitModal.addEventListener("click", () => {
    root.append(modal.render(visit.form))
    modal.show()
+   document.getElementById("select_doc").addEventListener("change", function () {
+      document.getElementById('div_doc').innerHTML = "Врач: " + this.value;
+   });
+ 
+   
 })
+

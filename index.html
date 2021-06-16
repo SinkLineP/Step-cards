@@ -19,9 +19,9 @@
             </a>
             <a><button type="button" class="btn btn-outline-success login" id="ModalLogin">Вход</button></a>
             <!-- <a class="hide-btn"> -->
-                <br><a>
-                    <button type="button" class="btn btn-outline-danger createvisit" id="ModalVisit">Создать визит</button>
-                </a>
+            <br><a>
+                <button type="button" class="btn btn-outline-danger createvisit" id="ModalVisit">Создать визит</button>
+            </a>
             <!-- </a> -->
         </div>
     </section>
@@ -72,7 +72,7 @@
             <form id="post-form">
                 <label for="email">Your email: </label>
                 <input type="email" id="email" size="39" required>
-                <br/>  <br/>     <label for="email">Your password: </label>
+                <br /> <br /> <label for="password">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
                 <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
             </form>
@@ -80,11 +80,81 @@
         <!-- visit -->
         <template id="visit-template">
             <form id="visit-form">
-                <label for="email">Your emadsdsdsdsdil: </label>
-                <input type="email" id="email" size="39" required>
-                <br/>  <br/>     <label for="email">Your password: </label>
-                <input id="userPassword" type="password" size="39" required>
-                <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
+                <p>Выберите врача: 
+                <select id="select_doc">
+                    <option value="Дмитрий Сергеевич">Кардиолог</option>
+                    <option value="Оксана Степановна" >Стоматолог</option>
+                    <option value="Лариса Андреевна" >Терапевт</option>
+                </select>
+            </p>
+                <div id="div_doc">Врач: Дмитрий Сергеевич</div>
+                <br />
+                <p>Цель визита: </p>
+                <p></p><textarea name="comment"></textarea></p>
+                <p>Краткое описание визита: </p>
+                <p></p><textarea name="comment"></textarea></p>
+                <p>Срочность:
+                <select>
+                    <option>обычная</option>
+                    <option>приоритетная</option>
+                    <option>неотложная</option>
+                </select> </p>  
+                <br /> <br />
+                <p>Ваше имя:
+                    <input type="text" size="29">
+                </p>
+                <p>Ваша фамилия:
+                    <input type="text" size="25">
+                </p>
+                <p>Ваше отчество:
+                    <input type="text" size="25">
+                </p>
+                <br />
+    <!-- ДЛЯ КАРДИОЛОГА================================== -->
+                <div id="div_card">
+                    <p>Обычное давление:
+                        <input type="text" size="15px">
+                    </p>
+                    <p>Индекс массы тела:
+                        <input type="text" size="15px">
+                    </p>
+                    <p>Перенесенные заболевания сердечно-сосудистой системы:
+                        <input type="text" size="25px">
+                    </p>
+                    <p id="therapist">Возраст:
+                        <input type="text" size="15px">
+                    </p>
+                </div>
+      <!-- ======================================================== -->
+
+      <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
+
+      <p>Дата последнего посещения:</p>
+
+      <input type="date" id="start" name="trip-start"
+             value="2021-06-15"
+             min="2021-01-01" max="2021-12-31">
+      
+
+<br/><br/>
+
+
+      <!-- =========================================================== -->
+
+   <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+   <p id="therapist">Возраст:
+    <input type="text" size="15px">
+</p>
+
+   <!-- =========================================================== -->
+
+
+
+<br /><br />
+
+                <button type="submit" class="btn btn-outline-danger btn-form-visit-close">Закрыть</button>
+                <button type="submit" class="btn btn-outline-success btn-form-visit">Создать</button>
+
             </form>
         </template>
 

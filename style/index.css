@@ -46,6 +46,18 @@
     margin-bottom: -40px;
 }
 
+.btn-form-visit-close {
+    margin-left: 30px;
+    width: 140px;
+    height: 60px;
+}
+
+.btn-form-visit {
+    margin-left: 100px;
+    width: 140px;
+    height: 60px;
+}
+
 .createvisit {
     position: absolute;
     width: 140px;
@@ -89,4 +101,14 @@
     height: 38.5px;
 }
 
+form p {
+   font-size: 16px;
+   font-family: Montserrat, sans-serif;
+   text-shadow:  0 0 0.1em rgb(0, 0, 0);
+   
+
+}
+.modal-content{
+    box-shadow: 10px 10px 20px rgba(0,0,0,0.5);
+}
 /* FORM */
