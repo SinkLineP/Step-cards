@@ -1,6 +1,7 @@
 import Visit from "./modules/Visit.js"
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
+import BASE_URL from "./constants.js";
 
 const visit = new Visit();
 const login = new LogIn();
@@ -19,3 +20,9 @@ visitModal.addEventListener("click", () => {
    root.append(modal.render(visit.form))
    modal.show()
 })
+
+axios("http://localhost:5500/user/1")
+   .then(response => response)
+   .then(request => {
+      console.log(request);
+   })
