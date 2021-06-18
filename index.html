@@ -18,11 +18,9 @@
                 <img src="./image/icon.png" class="size-icon" />
             </a>
             <a><button type="button" class="btn btn-outline-success login" id="ModalLogin">Вход</button></a>
-            <!-- <a class="hide-btn"> -->
-                <br><a>
-                    <button type="button" class="btn btn-outline-danger createvisit" id="ModalVisit">Создать визит</button>
-                </a>
-            <!-- </a> -->
+            <a class="hide-btn" id="btn-visit">
+                <button type="button" class="btn btn-outline-danger createvisit" id="ModalVisit">Создать визит</button>
+            </a>
         </div>
     </section>
     <section class="filter">
@@ -67,14 +65,14 @@
         <hr>
         <div id="root"></div>
 
-
+        <!-- login -->
         <template id="form-template">
             <form id="login-form">
                 <label for="email">Your email: </label>
-                <input type="email" id="email" size="39" required>
-                <br/>  <br/>     <label for="email">Your password: </label>
+                <input type="email" id="email-login" size="39" required>
+                <br /> <br /> <label for="email">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
-                <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
+                <button type="submit" class="btn btn-outline-success btn-form" id="btn-login-submit">LogIn</button>
             </form>
         </template>
         <!-- visit -->
@@ -82,7 +80,7 @@
             <form id="visit-form">
                 <label for="email">Your emadsdsdsdsdil: </label>
                 <input type="email" id="email" size="39" required>
-                <br/>  <br/>     <label for="email">Your password: </label>
+                <br /> <br /> <label for="email">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
                 <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
             </form>
@@ -94,7 +92,7 @@
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-    </script>
+        </script>
     <script src="./js/index.js" type="module"></script>
 </body>
 
