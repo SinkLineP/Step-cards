@@ -36,13 +36,13 @@ loginModal.addEventListener("click", () => {
                      btnVisit.classList.remove("hide-btn")
                      ModalClose.click();
                   } else {
-                     console.log("Error")
+                     alert("No correct email or password!!")
                   };  
                });
             })
          return el.type === "submit";
       })[0];
-     
+      console.log("helo");
    })
 
    modal.show();
