@@ -69,8 +69,8 @@
         <template id="form-template">
             <form id="login-form">
                 <label for="email">Your email: </label>
-                <input type="email" id="email-login" size="39" required>
-                <br /> <br /> <label for="email">Your password: </label>
+                <input type="email" id="email" size="39" required>
+                <br /> <br /> <label for="password">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
                 <button type="submit" class="btn btn-outline-success btn-form" id="btn-login-submit">LogIn</button>
             </form>
@@ -78,11 +78,79 @@
         <!-- visit -->
         <template id="visit-template">
             <form id="visit-form">
-                <label for="email">Your emadsdsdsdsdil: </label>
-                <input type="email" id="email" size="39" required>
-                <br /> <br /> <label for="email">Your password: </label>
-                <input id="userPassword" type="password" size="39" required>
-                <button type="submit" class="btn btn-outline-success btn-form">LogIn</button>
+                <p>Выберите врача: 
+                <select>
+                    <option value="card">Кардиолог</option>
+                    <option value="dent">Стоматолог</option>
+                    <option value="therap">Терапевт</option>
+                </select>
+            </p>
+                <br />
+                <p>Цель визита: </p>
+                <p></p><textarea name="comment"></textarea></p>
+                <p>Краткое описание визита: </p>
+                <p></p><textarea name="comment"></textarea></p>
+                <p>Срочность:
+                <select>
+                    <option>обычная</option>
+                    <option>приоритетная</option>
+                    <option>неотложная</option>
+                </select> </p>  
+                
+                <p>Ваше имя:
+                    <input type="text" size="29">
+                </p>
+                <p>Ваша фамилия:
+                    <input type="text" size="25">
+                </p>
+                <p>Ваше отчество:
+                    <input type="text" size="25">
+                </p>
+    <!-- ДЛЯ КАРДИОЛОГА================================== -->
+                <div id="card">
+                    <p>Обычное давление:
+                        <input type="text" size="15px">
+                    </p>
+                    <p>Индекс массы тела:
+                        <input type="text" size="15px">
+                    </p>
+                    <p>Перенесенные заболевания сердечно-сосудистой системы:
+                        <input type="text" size="25px">
+                    </p>
+                    <p id="therapist">Возраст:
+                        <input type="text" size="15px">
+                    </p>
+                </div>
+      <!-- ======================================================== -->
+
+      <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
+<div id="dent">
+      <p>Дата последнего посещения:</p>
+
+      <input type="date" id="start" name="trip-start"
+             value="2021-06-15"
+             min="2021-01-01" max="2021-12-31">
+      
+            </div>
+
+
+      <!-- =========================================================== -->
+
+   <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+   <div id="therap">
+   <p id="therapist">Возраст:
+    <input type="text" size="15px">
+</p>
+</div>
+   <!-- =========================================================== -->
+
+
+
+<br /><br />
+
+                <button type="submit" class="btn btn-outline-danger btn-form-visit-close">Закрыть</button>
+                <button type="submit" class="btn btn-outline-success btn-form-visit">Создать</button>
+
             </form>
         </template>
 

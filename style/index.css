@@ -1,99 +1,114 @@
 /* HEADER */
 
 .header {
-    background-color: rgba(51, 51, 51, 0.849);
-    overflow: hidden;
-    height: 80px;
-    margin-bottom: 100px;
+  background-color: rgba(51, 51, 51, 0.849);
+  overflow: hidden;
+  height: 80px;
+  margin-bottom: 100px;
 }
 
-
 .header a {
-    font-family: Montserrat, sans-serif;
-    color: #f2f2f2;
-    /* padding:  20%; */
-width: 20px;
-    text-decoration: none;
-    /* font-size: 47px; */
+  font-family: Montserrat, sans-serif;
+  color: #f2f2f2;
+  /* padding:  20%; */
+  width: 20px;
+  text-decoration: none;
+  /* font-size: 47px; */
 }
 
 .header a:hover {
-    color: rgb(184, 117, 117);
+  color: rgb(184, 117, 117);
 }
 
-
 .size-icon {
-    transform: translateY(9px);
-    margin-left: 30px;
-    width: 60px;
-    height: 60px;
+  transform: translateY(9px);
+  margin-left: 30px;
+  width: 60px;
+  height: 60px;
 }
 
 .login {
-    transform: translateY(9px);
-    width: 140px;
-    height: 60px;
-    position: absolute; 
-    margin-left: 1100px;
+  transform: translateY(9px);
+  width: 140px;
+  height: 60px;
+  position: absolute;
+  margin-left: 1100px;
+}
 
+.btn-form {
+  width: 140px;
+  height: 60px;
+  margin-left: 145px;
+  margin-top: 30px;
+  margin-bottom: -40px;
 }
-.btn-form{
-    width: 140px;
-    height: 60px;
-margin-left: 145px;
-margin-top: 30px;
-margin-bottom: -40px;
+
+.btn-form-visit-close {
+  margin-left: 30px;
+  width: 140px;
+  height: 60px;
 }
+
+.btn-form-visit {
+  margin-left: 100px;
+  width: 140px;
+  height: 60px;
+}
+
 .createvisit {
-    position: absolute; 
-    width: 140px;
-    height: 60px;
-    transform: translateY(9px);
-    margin-left: 1100px;
-  
+  position: absolute;
+  width: 140px;
+  height: 60px;
+  transform: translateY(9px);
+  margin-left: 1100px;
 }
-.hide-btn{
-    display: none;  
+
+.hide-btn {
+  display: none;
 }
 
 /* FILTER */
 
-
-
 .filter .filter-input {
-    margin-left: 30%;
+  margin-left: 30%;
 }
 
 .filter .filter-one {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .filter .filter-btn-all {
-    width: 159px;
-    text-align: right;
+  width: 159px;
+  text-align: right;
 }
 
 .filter .filter-two {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .filter .filter-search {
-    margin-left: 50px;
+  margin-left: 50px;
 }
 
 .filter .filter-input input {
-    width: 300px;
-    height: 38.5px;
+  width: 300px;
+  height: 38.5px;
 }
 
+form p {
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+  text-shadow: 0 0 0.1em rgb(0, 0, 0);
+}
+.modal-content {
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
 /* FORM */
-
-
 
 /* MODAL-REGISTER */
 
 .reg-pos {
-    position: absolute;
-    left: 39%;
-    margin-top: 5%;
+  position: absolute;
+  left: 39%;
+  margin-top: 5%;
 }

@@ -51,9 +51,25 @@ loginModal.addEventListener("click", () => {
 
 
 visitModal.addEventListener("click", () => {
-   root.append(modal.render(visit.form));
+  
+   root.append(modal.render(visit.form))
    modal.show();
+
+   const select = document.querySelector('select');
+   const content = {};
+
+   [...select.querySelectorAll('option')]
+   .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+
+   const onChange = value => {
+      Object.keys(content).forEach(id => {
+         content[id].style.display = value === id ? 'block' : 'none';
+      });
+   }
+
+   select.addEventListener('change', e => onChange(e.target.value));
+   onChange('card');
+
+
+
 })
-
-
-
