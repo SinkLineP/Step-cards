@@ -20,12 +20,16 @@ loginModal.addEventListener("click", () => {
    const formTemplateLogin = document.getElementById("form-template");
    const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
    const ModalClose = document.getElementById("modal-close");
+   const alertError = document.createElement("div");
+   // const btnLoginHide = document.getElementById("btn-login-submit-hide");
+   // btnLoginHide.classList.add("hide-btn");
 
    btnLogin.addEventListener("click", () => {
       const emailLogValue = emailLog.value;
       const passwordLogValue = passwordLog.value;
 
       Array.from(addLoginForm).filter((el) => {
+         console.log(el);
          axios.get("http://localhost:3000/users")
             .then(res => res)
             .then(com => {
@@ -33,16 +37,20 @@ loginModal.addEventListener("click", () => {
                   if (emailLogValue == e.email && passwordLogValue == e.password) {
                      console.log("Done")
                      loginModal.style.display = "none";
-                     btnVisit.classList.remove("hide-btn")
+                     btnVisit.classList.remove("hide-btn");
                      ModalClose.click();
                   } else {
-                     alert("No correct email or password!!")
+                     console.log("No correct email or password!!");
+                     alertError.innerText = "No correct Email or Password!";
+                     alertError.setAttribute("class", "alert alert-danger alert-error-size");
+                     alertError.setAttribute("role", "alert");
+                     root.append(modal.render(alertError));
+                     // btnLoginHide.classList.remove("hide-/btn");
                   };  
                });
             })
          return el.type === "submit";
       })[0];
-      console.log("helo");
    })
 
    modal.show();
@@ -73,3 +81,5 @@ visitModal.addEventListener("click", () => {
 
 
 })
+
+

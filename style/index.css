@@ -112,3 +112,10 @@ form p {
   left: 39%;
   margin-top: 5%;
 }
+
+
+/* ALERT-ERROR */
+
+.alert-error-size {
+  position: absolute;
+}
