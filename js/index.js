@@ -59,8 +59,9 @@ loginModal.addEventListener("click", () => {
 
 
 visitModal.addEventListener("click", () => {
+   
   
-   root.append(modal.render(visit.form))
+   root.replaceWith(modal.render(visit.form))
    modal.show();
 
    const select = document.querySelector('select');
