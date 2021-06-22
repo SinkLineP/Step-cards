@@ -13,54 +13,56 @@ const btnVisit = document.getElementById("btn-visit");
 
 
 loginModal.addEventListener("click", () => {
-   root.append(modal.render(login.form));
-   const emailLog = document.getElementById("email-login");
-   const passwordLog = document.getElementById("userPassword");
-   const btnLogin = document.getElementById("btn-login-submit");
-   const formTemplateLogin = document.getElementById("form-template");
-   const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
-   const ModalClose = document.getElementById("modal-close");
-   const alertError = document.createElement("div");
-   // const btnLoginHide = document.getElementById("btn-login-submit-hide");
-   // btnLoginHide.classList.add("hide-btn");
+      root.append(modal.render(login.form));
+      const emailLog = document.getElementById("email-login");
+      const passwordLog = document.getElementById("userPassword");
+      const btnLogin = document.getElementById("btn-login-submit");
+      const formTemplateLogin = document.getElementById("form-template");
+      const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
+      const ModalClose = document.getElementById("modal-close");
+      const alertError = document.createElement("div");
 
-   btnLogin.addEventListener("click", () => {
-      const emailLogValue = emailLog.value;
-      const passwordLogValue = passwordLog.value;
+      // const btnLoginHide = document.getElementById("btn-login-submit-hide");
+      // btnLoginHide.classList.add("hide-btn");
 
-      Array.from(addLoginForm).filter((el) => {
-         console.log(el);
-         axios.get("http://localhost:3000/users")
-            .then(res => res)
-            .then(com => {
-               com.data.forEach(e => {
-                  if (emailLogValue == e.email && passwordLogValue == e.password) {
-                     console.log("Done")
-                     loginModal.style.display = "none";
-                     btnVisit.classList.remove("hide-btn");
-                     ModalClose.click();
-                  } else {
-                     console.log("No correct email or password!!");
-                     alertError.innerText = "No correct Email or Password!";
-                     alertError.setAttribute("class", "alert alert-danger alert-error-size");
-                     alertError.setAttribute("role", "alert");
-                     root.append(modal.render(alertError));
-                     // btnLoginHide.classList.remove("hide-/btn");
-                  };  
-               });
-            })
-         return el.type === "submit";
-      })[0];
-   })
+      btnLogin.addEventListener("click", () => {
+         const emailLogValue = emailLog.value;
+         const passwordLogValue = passwordLog.value;
 
-   modal.show();
-});
+         Array.from(addLoginForm).filter((el) => {
+            console.log(el);
+            axios.get("http://localhost:3000/users")
+               .then(res => res)
+               .then(com => {
+                  com.data.forEach(e => {
+                     if (emailLogValue == e.email && passwordLogValue == e.password) {
+                        console.log("Done")
+                        loginModal.style.display = "none";
+                        btnVisit.classList.remove("hide-btn");
+                        ModalClose.click();
+                     } else {
+                        console.log("No correct email or password!!");
+                        alertError.innerText = "No correct Email or Password!";
+                        alertError.setAttribute("class", "alert alert-danger alert-error-size");
+                        alertError.setAttribute("role", "alert");
+                        root.append(modal.render(alertError));
+                        // btnLoginHide.classList.remove("hide-/btn");
+                     };
+                  });
+               })
+            return el.type === "submit";
+         })[0];
+      })
 
+      modal.show();
+   }
+
+);
 
 
 visitModal.addEventListener("click", () => {
-   
-  
+
+
    root.replaceWith(modal.render(visit.form))
    modal.show();
 
@@ -82,5 +84,3 @@ visitModal.addEventListener("click", () => {
 
 
 })
-
-

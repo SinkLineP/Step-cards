@@ -61,43 +61,44 @@
             </div>
         </div>
     </section>
-    <section class="forms-board">
-        <hr>
-        <div id="root"></div>
 
-        <!-- login -->
-        <template id="form-template">
-            <form id="login-form">
-                <label for="email">Your email: </label>
-                <input type="email" id="email-login" size="39" required>
-                <br /> <br /> <label for="password">Your password: </label>
-                <input id="userPassword" type="password" size="39" required>
-                <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit">LogIn</button>
-                <!-- <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit-hide">LogIn</button> -->
-            </form>
-        </template>
-        <!-- visit -->
+    <hr>
+    <div id="root"></div>
+
+    <!-- login -->
+    <template id="form-template">
+        <form id="login-form">
+            <label for="email" id="log">Your email: </label>
+            <input type="email" id="email-login" size="39" required>
+            <br /> <br /> <label for="password">Your password: </label>
+            <input id="userPassword" type="password" size="39" required>
+            <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit">LogIn</button>
+            <!-- <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit-hide">LogIn</button> -->
+        </form>
+    </template>
+    <!-- visit -->
+    <section class="forms-board">
         <template id="visit-template">
             <form id="visit-form">
-                <p>Выберите врача: 
-                <select>
-                    <option value="card">Кардиолог</option>
-                    <option value="dent">Стоматолог</option>
-                    <option value="therap">Терапевт</option>
-                </select>
-            </p>
+                <p>Выберите врача:
+                    <select>
+                        <option value="card">Кардиолог</option>
+                        <option value="dent">Стоматолог</option>
+                        <option value="therap">Терапевт</option>
+                    </select>
+                </p>
                 <br />
                 <p>Цель визита: </p>
                 <p></p><textarea name="comment"></textarea></p>
                 <p>Краткое описание визита: </p>
                 <p></p><textarea name="comment"></textarea></p>
                 <p>Срочность:
-                <select>
-                    <option>обычная</option>
-                    <option>приоритетная</option>
-                    <option>неотложная</option>
-                </select> </p>  
-                
+                    <select>
+                        <option>обычная</option>
+                        <option>приоритетная</option>
+                        <option>неотложная</option>
+                    </select> </p>
+
                 <p>Ваше имя:
                     <input type="text" size="29">
                 </p>
@@ -107,7 +108,7 @@
                 <p>Ваше отчество:
                     <input type="text" size="25">
                 </p>
-    <!-- ДЛЯ КАРДИОЛОГА================================== -->
+                <!-- ДЛЯ КАРДИОЛОГА================================== -->
                 <div id="card">
                     <p>Обычное давление:
                         <input type="text" size="15px">
@@ -122,46 +123,71 @@
                         <input type="text" size="15px">
                     </p>
                 </div>
-      <!-- ======================================================== -->
+                <!-- ======================================================== -->
 
-      <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
-<div id="dent">
-      <p>Дата последнего посещения:</p>
+                <!-- ДЛЯ СТОМАТОЛОГА======================================= -->
+                <div id="dent">
+                    <p>Дата последнего посещения:</p>
 
-      <input type="date" id="start" name="trip-start"
-             value="2021-06-15"
-             min="2021-01-01" max="2021-12-31">
-      
-            </div>
+                    <input type="date" id="start" name="trip-start" value="2021-06-15" min="2021-01-01"
+                        max="2021-12-31">
 
-
-      <!-- =========================================================== -->
-
-   <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
-   <div id="therap">
-   <p id="therapist">Возраст:
-    <input type="text" size="15px">
-</p>
-</div>
-   <!-- =========================================================== -->
+                </div>
 
 
+                <!-- =========================================================== -->
 
-<br /><br />
+                <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+                <div id="therap">
+                    <p id="therapist">Возраст:
+                        <input type="text" size="15px">
+                    </p>
+                </div>
+                <!-- =========================================================== -->
+
+
+
+                <br /><br />
 
                 <button type="submit" class="btn btn-outline-danger btn-form-visit-close">Закрыть</button>
                 <button type="submit" class="btn btn-outline-success btn-form-visit">Создать</button>
 
             </form>
         </template>
+</section>
+    <section class="cart-visit">
+     <!-- ДЛЯ КАРДИОЛОГА================================== -->
+    <p>Врач: Кардиолог</p>
+    <p>Цель визита: </p>
+    <p>Краткое описание визита: </p>
+    <p>Cрочность: </p>
+    <p>ФИО: </p>
+    <p>Обычное давление: </p>
+    <p>Индекс массы тела: </p>
+    <p>Перенесенные заболевания сердечно-сосудистой системы: </p>
+    <p>Возраст: </p>
+ <!-- ДЛЯ СТОМАТОЛОГА======================================= -->
+ <p>Врач: Стоматолог</p>
+ <p>Цель визита: </p>
+ <p>Краткое описание визита: </p>
+ <p>Cрочность: </p>
+ <p>ФИО: </p>
+ <p>Дата последнего посещения: </p>
+  <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+  <p>Врач: Терапевт</p>
+  <p>Цель визита: </p>
+  <p>Краткое описание визита: </p>
+  <p>Cрочность: </p>
+  <p>ФИО: </p>
+  <p>Возраст: </p>
+    <section>
 
     </section>
-
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous">
-        </script>
+    </script>
     <script src="./js/index.js" type="module"></script>
 </body>
 
