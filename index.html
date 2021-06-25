@@ -79,78 +79,82 @@
         <!-- visit -->
         <template id="visit-template">
             <form id="visit-form">
-                <p>Выберите врача: 
-                <select>
-                    <option value="card">Кардиолог</option>
-                    <option value="dent">Стоматолог</option>
-                    <option value="therap">Терапевт</option>
-                </select>
-            </p>
+                <p>Выберите врача:
+                    <select id="doctor">
+                        <option value="card">Кардиолог</option>
+                        <option value="dent">Стоматолог</option>
+                        <option value="therap">Терапевт</option>
+                    </select>
+                </p>
                 <br />
                 <p>Цель визита: </p>
-                <p></p><textarea name="comment"></textarea></p>
+                <p></p><textarea name="comment" id="visit-target"></textarea></p>
                 <p>Краткое описание визита: </p>
-                <p></p><textarea name="comment"></textarea></p>
+                <p></p><textarea name="comment" id="description"></textarea></p>
                 <p>Срочность:
-                <select>
-                    <option>обычная</option>
-                    <option>приоритетная</option>
-                    <option>неотложная</option>
-                </select> </p>  
-                
+                    <select id="urgency">
+                        <option>обычная</option>
+                        <option>приоритетная</option>
+                        <option>неотложная</option>
+                    </select>
+                </p>
+
                 <p>Ваше имя:
-                    <input type="text" size="29">
+                    <input type="text" size="29" id="name">
                 </p>
                 <p>Ваша фамилия:
-                    <input type="text" size="25">
+                    <input type="text" size="25" id="last-name">
                 </p>
                 <p>Ваше отчество:
-                    <input type="text" size="25">
+                    <input type="text" size="25" id="middle-name">
                 </p>
-    <!-- ДЛЯ КАРДИОЛОГА================================== -->
+                <!-- ДЛЯ КАРДИОЛОГА================================== -->
                 <div id="card">
                     <p>Обычное давление:
-                        <input type="text" size="15px">
+                        <input type="text" size="15px" id="pressure">
                     </p>
                     <p>Индекс массы тела:
-                        <input type="text" size="15px">
+                        <input type="text" size="15px" id="index-mass">
                     </p>
                     <p>Перенесенные заболевания сердечно-сосудистой системы:
-                        <input type="text" size="25px">
+                        <input type="text" size="25px" id="cardiovascular-diseases">
                     </p>
                     <p id="therapist">Возраст:
-                        <input type="text" size="15px">
+                        <input type="text" size="15px" id="age">
                     </p>
                 </div>
-      <!-- ======================================================== -->
+                <!-- ======================================================== -->
 
-      <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
-<div id="dent">
-      <p>Дата последнего посещения:</p>
+                <!-- ДЛЯ СТОМАТОЛОГА==================================================== -->
+                <div id="dent">
+                    <p>Дата последнего посещения:</p>
 
-      <input type="date" id="start" name="trip-start"
-             value="2021-06-15"
-             min="2021-01-01" max="2021-12-31">
-      
-            </div>
+                    <input type="date" id="start" name="trip-start" value="2021-06-15" min="2021-01-01"
+                        max="2021-12-31">
 
-
-      <!-- =========================================================== -->
-
-   <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
-   <div id="therap">
-   <p id="therapist">Возраст:
-    <input type="text" size="15px">
-</p>
-</div>
-   <!-- =========================================================== -->
+                </div>
 
 
+                <!-- =========================================================== -->
 
-<br /><br />
+                <!-- ДЛЯ ТЕРАПЕВТА==================================================== -->
+                <div id="therap">
+                    <p id="therapist">Возраст:
+                        <input type="text" size="15px" id="age">
+                    </p>
+                </div>
+                <!-- =========================================================== -->
 
-                <button type="submit" class="btn btn-outline-danger btn-form-visit-close">Закрыть</button>
-                <button type="submit" class="btn btn-outline-success btn-form-visit">Создать</button>
+
+
+                <br /><br />
+
+
+
+
+                <button type="button" class="btn btn-outline-danger btn-form-visit-close"
+                    id="close-visit">Закрыть</button>
+                <button type="button" class="btn btn-outline-success btn-form-visit" id="create-visit">Создать</button>
 
             </form>
         </template>
