@@ -1,8 +1,6 @@
-
 import Visit from "./modules/Visit.js";
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
-
 
 const visit = new Visit();
 const login = new LogIn();
@@ -14,16 +12,22 @@ const visitModal = document.getElementById("ModalVisit");
 const btnVisit = document.getElementById("btn-visit");
 const emailUser = localStorage.getItem('Email');
 const passUser = localStorage.getItem('Password');
+// filter
+const filterSearch = document.getElementById("filter-search");
+const filterOne = document.getElementById("filter-one");
+const filterTwo = document.getElementById("filter-two");
+const searchBtn = document.getElementById("searchBtnFilter");
+
 
 if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password') == false) {
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
 
 
+
    axios.get("http://localhost:3000/visit")
       .then(res => res)
       .then(com => {
-
          com.data.forEach(e => {
             if (e.authorVisit == emailUser) {
                if (e.doctor == "card") {
@@ -78,6 +82,9 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
          });
       })
 
+
+
+
    visitModal.addEventListener("click", () => {
       root.append(modal.render(visit.form))
       const visitTemplate = document.getElementById("visit-template");
@@ -116,7 +123,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
          });
       })
 
-
+      // --------------
       const select = document.querySelector('select');
       const content = {};
 
@@ -134,10 +141,11 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
       modal.show();
    })
+   // Filter
+
 
 } else {
    root.innerHTML = "<center>No items have been added</center>"
-   // localStorage.setItem('visit-card', '{"data":{"doctor":"","targetVisit":"","description":"","urgency":"","name":"","lastname":"","middlename":"","pressure":"","indexMass":"","cardiovascularDiseases":"","age":"","dateOfLastVisit":"","id":1}}')
    loginModal.addEventListener("click", () => {
       root.append(modal.render(login.form));
       const emailLog = document.getElementById("email-login");

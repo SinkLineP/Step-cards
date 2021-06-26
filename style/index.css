@@ -92,7 +92,11 @@
 
 .filter .filter-input input {
   width: 300px;
-  height: 38.5px;
+  height: 36px;
+}
+
+.filter .filter-btn-search {
+  height: 36px;
 }
 
 form p {

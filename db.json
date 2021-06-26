@@ -107,6 +107,38 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 6
+    },
+    {
+      "doctor": "dent",
+      "targetVisit": "admin",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-17",
+      "authorVisit": "admin@gmail.com",
+      "id": 7
+    },
+    {
+      "doctor": "dent",
+      "targetVisit": "admin",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-17",
+      "authorVisit": "admin@gmail.com",
+      "id": 8
     }
   ]
 }
