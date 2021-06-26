@@ -23,10 +23,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
 
-   searchBtn.addEventListener("click", () => {
-      console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
-      console.log(filterOne);
-   })
+   
 
    axios.get("http://localhost:3000/visit")
       .then(res => res)
@@ -84,6 +81,23 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   <hr>
                `
                }
+
+               searchBtn.addEventListener("click", () => {
+                  // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
+                  // console.log(filterOne);
+                  if (filterSearch.value == e.targetVisit || 
+                      filterSearch.value == e.description) {
+                        root.search(filterSearch.value);
+
+                        console.log(filterSearch.value == e.targetVisit);
+                        console.log(filterSearch.value == e.description);
+                     
+                        console.log("It`s Work!");
+                  } else {
+
+                     console.log("No work!");
+                  };
+               })
             }
          });
       })
