@@ -121,7 +121,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "dateOfLastVisit": dateLastVisit.value,
             "authorVisit": emailUser,
          });
-         
+         location.reload()
       })
 
       // --------------
