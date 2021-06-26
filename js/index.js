@@ -87,7 +87,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   // console.log(filterOne);
                   if (filterSearch.value == e.targetVisit || 
                       filterSearch.value == e.description) {
-                        root.search(filterSearch.value);
+                        filterSearch.search(filterSearch.value);
 
                         console.log(filterSearch.value == e.targetVisit);
                         console.log(filterSearch.value == e.description);
