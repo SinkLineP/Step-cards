@@ -12,76 +12,71 @@ const root = document.getElementById("root");
 const loginModal = document.getElementById("ModalLogin");
 const visitModal = document.getElementById("ModalVisit");
 const btnVisit = document.getElementById("btn-visit");
-let doctorVisit, dataVisit, visitCard;
+const emailUser = localStorage.getItem('Email');
+const passUser = localStorage.getItem('Password');
 
 if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password') == false) {
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
-   const cardVisit = localStorage.getItem('visit-card');
-   const parseCardVisit = JSON.parse(cardVisit)
-   dataVisit = parseCardVisit.data;
-   
 
-   if (dataVisit.doctor == "card") {
-      doctorVisit = "Кардиолог";
-   }
-   if (dataVisit.doctor == "dent") {
-      doctorVisit = "Стоматолог";
-   }
-   if (dataVisit.doctor == "therap") {
-      doctorVisit = "Терапевт";
-   }
 
-   visitCard = {
-      cardiolog: `
-      <div>
-          <p>Врач: ${doctorVisit}</p>
-          <p>Цель визита: ${dataVisit.targetVisit}</p>
-          <p>Краткое описание визита: ${dataVisit.description}</p>
-          <p>Срочность: ${dataVisit.urgency}</p>
-          <p>Имя: ${dataVisit.name}</p>
-          <p>Фамилия: ${dataVisit.lastname}</p>
-          <p>Отчество: ${dataVisit.middlename}</p>
-          <p>Обычное давление: ${dataVisit.pressure}</p>
-          <p>Индекс массы тела: ${dataVisit.indexMass}</p>
-          <p>Перенесенные заболевания сердечно-сосудистой системы: ${dataVisit.cardiovascularDiseases}</p>
-          <p>Возраст: ${dataVisit.age}</p>
-      </div>
-   `,
-      dentist: `
-      <div>
-          <p>Врач: ${doctorVisit}</p>
-          <p>Цель визита: ${dataVisit.targetVisit}</p>
-          <p>Краткое описание визита: ${dataVisit.description}</p>
-          <p>Срочность: ${dataVisit.urgency}</p>
-          <p>Имя: ${dataVisit.name}</p>
-          <p>Фамилия: ${dataVisit.lastname}</p>
-          <p>Отчество: ${dataVisit.middlename}</p>
-          <p>Дата последнего посещения: ${dataVisit.dateOfLastVisit}</p>
-      </div>
-   `,
-      terapevt: `
-      <div>
-          <p>Врач: ${doctorVisit}</p>
-          <p>Цель визита: ${dataVisit.targetVisit}</p>
-          <p>Краткое описание визита: ${dataVisit.description}</p>
-          <p>Срочность: ${dataVisit.urgency}</p>
-          <p>Имя: ${dataVisit.name}</p>
-          <p>Фамилия: ${dataVisit.lastname}</p>
-          <p>Отчество: ${dataVisit.middlename}</p>
-          <p>Возраст: ${dataVisit.age}</p>
-      </div>
-   `}
+   axios.get("http://localhost:3000/visit")
+      .then(res => res)
+      .then(com => {
 
-   if (parseCardVisit.data.doctor == "card") {
-      root.innerHTML = visitCard.cardiolog;
-   }
-   if (parseCardVisit.data.doctor == "dent") {
-      root.innerHTML = visitCard.dentist;
-   }
-   if (parseCardVisit.data.doctor == "therap") {
-      root.innerHTML = visitCard.terapevt;
-   }
+         com.data.forEach(e => {
+            if (e.authorVisit == emailUser) {
+               if (e.doctor == "card") {
+                  const doctorCard = "Кардиолог"
+                  root.innerHTML += `
+                  <div>
+                     <p>Врач: ${doctorCard}</p>
+                     <p>Цель визита: ${e.targetVisit}</p>
+                     <p>Краткое описание визита: ${e.description}</p>
+                     <p>Срочность: ${e.urgency}</p>
+                     <p>Имя: ${e.name}</p>
+                     <p>Фамилия: ${e.lastname}</p>
+                     <p>Отчество: ${e.middlename}</p>
+                     <p>Обычное давление: ${e.pressure}</p>
+                     <p>Индекс массы тела: ${e.indexMass}</p>
+                     <p>Перенесенные заболевания сердечно-сосудистой системы: ${e.cardiovascularDiseases}</p>
+                     <p>Возраст: ${e.age}</p>
+                  </div>
+                  <hr>
+               `};
+               if (e.doctor == "dent") {
+                  const doctorDent = "Стоматолог";
+                  root.innerHTML += `
+                  <div>
+                     <p>Врач: ${doctorDent}</p>
+                     <p>Цель визита: ${e.targetVisit}</p>
+                     <p>Краткое описание визита: ${e.description}</p>
+                     <p>Срочность: ${e.urgency}</p>
+                     <p>Имя: ${e.name}</p>
+                     <p>Фамилия: ${e.lastname}</p>
+                     <p>Отчество: ${e.middlename}</p>
+                     <p>Дата последнего посещения: ${e.dateOfLastVisit}</p>
+                  </div>
+                  <hr>
+               `}
+               if (e.doctor == "therap") {
+                  const doctorTherap = "Терапевт";
+                  root.innerHTML += `
+                  <div>
+                     <p>Врач: ${doctorTherap}</p>
+                     <p>Цель визита: ${e.targetVisit}</p>
+                     <p>Краткое описание визита: ${e.description}</p>
+                     <p>Срочность: ${e.urgency}</p>
+                     <p>Имя: ${e.name}</p>
+                     <p>Фамилия: ${e.lastname}</p>
+                     <p>Отчество: ${e.middlename}</p>
+                     <p>Возраст: ${e.age}</p>
+                  </div>
+                  <hr>
+               `}
+            }
+         });
+      })
 
    visitModal.addEventListener("click", () => {
       root.append(modal.render(visit.form))
@@ -102,6 +97,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const age = document.getElementById("age");
       const dateLastVisit = document.getElementById("start");
 
+
       btnCreateVisit.addEventListener("click", async () => {
          const res = await axios.post('http://localhost:3000/visit', {
             "doctor": doctor.value,
@@ -115,15 +111,11 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "indexMass": indexMass.value,
             "cardiovascularDiseases": cardio.value,
             "age": age.value,
-            "dateOfLastVisit": dateLastVisit.value
+            "dateOfLastVisit": dateLastVisit.value,
+            "authorVisit": emailUser,
          });
-
-         
-         // console.log(res.data.id.value);
-
-         localStorage.setItem("visit-card", JSON.stringify(res));
-         res.data.headers['Content-Type'];
       })
+
 
       const select = document.querySelector('select');
       const content = {};
@@ -144,7 +136,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
    })
 
 } else {
-   localStorage.setItem('visit-card', '{"data":{"doctor":"","targetVisit":"","description":"","urgency":"","name":"","lastname":"","middlename":"","pressure":"","indexMass":"","cardiovascularDiseases":"","age":"","dateOfLastVisit":"","id":1}}')
+   root.innerHTML = "<center>No items have been added</center>"
+   // localStorage.setItem('visit-card', '{"data":{"doctor":"","targetVisit":"","description":"","urgency":"","name":"","lastname":"","middlename":"","pressure":"","indexMass":"","cardiovascularDiseases":"","age":"","dateOfLastVisit":"","id":1}}')
    loginModal.addEventListener("click", () => {
       root.append(modal.render(login.form));
       const emailLog = document.getElementById("email-login");
@@ -154,12 +147,12 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
       const ModalClose = document.getElementById("modal-close");
       const alertError = document.createElement("div");
-   
-   
+
+
       btnLogin.addEventListener("click", () => {
          const emailLogValue = emailLog.value;
          const passwordLogValue = passwordLog.value;
-   
+
          Array.from(addLoginForm).filter((el) => {
             axios.get("http://localhost:3000/users")
                .then(res => res)
@@ -183,10 +176,10 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             return el.type === "submit";
          })[0];
       })
-   
+
       modal.show();
    });
-   
+
 }
 
 
