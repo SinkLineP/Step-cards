@@ -82,22 +82,22 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                `
                }
 
-               searchBtn.addEventListener("click", () => {
-                  // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
-                  // console.log(filterOne);
-                  if (filterSearch.value == e.targetVisit || 
-                      filterSearch.value == e.description) {
-                        filterSearch.search(filterSearch.value);
+               // searchBtn.addEventListener("click", () => {
+               //    // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
+               //    // console.log(filterOne);
+               //    if (filterSearch.value == e.targetVisit || 
+               //        filterSearch.value == e.description) {
+               //          filterSearch.search(filterSearch.value);
 
-                        console.log(filterSearch.value == e.targetVisit);
-                        console.log(filterSearch.value == e.description);
+               //          console.log(filterSearch.value == e.targetVisit);
+               //          console.log(filterSearch.value == e.description);
                      
-                        console.log("It`s Work!");
-                  } else {
+               //          console.log("It`s Work!");
+               //    } else {
 
-                     console.log("No work!");
-                  };
-               })
+               //       console.log("No work!");
+               //    };
+               // })
             }
          });
       })
