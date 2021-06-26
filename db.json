@@ -45,22 +45,6 @@
       "id": 2
     },
     {
-      "doctor": "card",
-      "targetVisit": "sak my dik",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 3
-    },
-    {
       "doctor": "therap",
       "targetVisit": "rrrrrrrrrrr",
       "description": "",
@@ -107,6 +91,7 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 6
-    }
+    },
+  
   ]
 }
