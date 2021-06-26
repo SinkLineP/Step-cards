@@ -125,7 +125,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       })
 
       // --------------
-      const select = document.querySelector('select');
+      const select = document.getElementById('doctor');
       const content = {};
 
       [...select.querySelectorAll('option')]
