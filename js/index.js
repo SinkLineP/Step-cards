@@ -33,18 +33,18 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorCard}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Обычное давление: ${e.pressure}</p>
-                     <p>Индекс массы тела: ${e.indexMass}</p>
-                     <p>Перенесенные заболевания сердечно-сосудистой системы: ${e.cardiovascularDiseases}</p>
-                     <p>Возраст: ${e.age}</p>
+                  <div class="border-cart border-cart-card">
+                   <p> <b>Врач:</b>${doctorCard}</p>
+                     <p> <b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p> <b>Краткое описание визита:</b> ${e.description}</p>
+                     <p> <b>Срочность:</b> ${e.urgency}</p>
+                     <p> <b>Имя: </b>${e.name}</p>
+                     <p> <b>Фамилия:</b> ${e.lastname}</p>
+                     <p> <b>Отчество:</b> ${e.middlename}</p>
+                     <p> <b>Обычное давление:</b> ${e.pressure}</p>
+                     <p> <b>Индекс массы тела: </b>${e.indexMass}</p>
+                     <p> <b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
+                     <p> <b>Возраст:</b>  ${e.age}</p>
                   </div>
                   <hr>
                `
@@ -52,15 +52,15 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorDent}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Дата последнего посещения: ${e.dateOfLastVisit}</p>
+                  <div class="border-cart border-cart-dent">
+                     <p><b>Врач:</b> ${doctorDent}</p>
+                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p><b>Краткое описание визита: </b>${e.description}</p>
+                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Имя: </b>${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Дата последнего посещения:</b> ${e.dateOfLastVisit}</p>
                   </div>
                   <hr>
                `
@@ -68,15 +68,15 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorTherap}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Возраст: ${e.age}</p>
+                  <div class=" border-cart border-cart-therap">
+                     <p><b>Врач:</b> ${doctorTherap}</p>
+                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p><b>Краткое описание визита:</b> ${e.description}</p>
+                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Имя:</b> ${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Возраст:</b> ${e.age}</p>
                   </div>
                   <hr>
                `
