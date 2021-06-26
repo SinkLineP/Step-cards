@@ -139,6 +139,22 @@
       "dateOfLastVisit": "2021-06-17",
       "authorVisit": "admin@gmail.com",
       "id": 8
+    },
+    {
+      "doctor": "card",
+      "targetVisit": "",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-15",
+      "authorVisit": "admin@gmail.com",
+      "id": 9
     }
   ]
 }

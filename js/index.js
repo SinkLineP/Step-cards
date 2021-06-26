@@ -105,8 +105,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const dateLastVisit = document.getElementById("start");
 
 
-      btnCreateVisit.addEventListener("click", async () => {
-         const res = await axios.post('http://localhost:3000/visit', {
+      btnCreateVisit.addEventListener("click", () => {
+         const res = axios.post('http://localhost:3000/visit', {
             "doctor": doctor.value,
             "targetVisit": targetVisit.value,
             "description": desc.value,
@@ -121,6 +121,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "dateOfLastVisit": dateLastVisit.value,
             "authorVisit": emailUser,
          });
+         
       })
 
       // --------------
