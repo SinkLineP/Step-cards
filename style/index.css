@@ -124,14 +124,3 @@ form p {
   position: absolute;
 }
 
-.cart-visit{
-  margin-left: 50px;
-  
-}
-
-.cart-visit p{
-  width: 50%;
-  font-size: 18px;
-  color: rgb(24, 76, 144);
-  background-color: rgba(71, 68, 68, 0.144);
-}

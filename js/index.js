@@ -47,7 +47,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p>Возраст: ${e.age}</p>
                   </div>
                   <hr>
-               `};
+               `
+               };
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
@@ -62,7 +63,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p>Дата последнего посещения: ${e.dateOfLastVisit}</p>
                   </div>
                   <hr>
-               `}
+               `
+               }
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
@@ -77,7 +79,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p>Возраст: ${e.age}</p>
                   </div>
                   <hr>
-               `}
+               `
+               }
             }
          });
       })
@@ -121,14 +124,15 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "dateOfLastVisit": dateLastVisit.value,
             "authorVisit": emailUser,
          });
+         location.reload()
       })
 
       // --------------
-      const select = document.querySelector('select');
+      const select = document.getElementById('doctor');
       const content = {};
 
       [...select.querySelectorAll('option')]
-         .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+      .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
       const onChange = value => {
          Object.keys(content).forEach(id => {
@@ -189,7 +193,3 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
    });
 
 }
-
-
-
-
