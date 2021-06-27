@@ -127,7 +127,7 @@ form p {
 
 .border-cart {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  margin-top: 30px;
+  /* margin-top: 30px; */
   margin-left: 50px;
   width: 900px;
   background-color: 1px solid rgb(255, 255, 255);
