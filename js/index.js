@@ -25,6 +25,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
    
 
+   
+
    axios.get("http://localhost:3000/visit")
       .then(res => res)
       .then(com => {
@@ -33,8 +35,10 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
+                  <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
+                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
                   <div class="border-cart border-cart-card">
-                   <p> <b>Врач:</b>${doctorCard}</p>
+                   <p> <b>Врач:</b>${doctorCard} </p>
                      <p> <b>Цель визита:</b> ${e.targetVisit}</p>
                      <p> <b>Краткое описание визита:</b> ${e.description}</p>
                      <p> <b>Срочность:</b> ${e.urgency}</p>
@@ -46,12 +50,16 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p> <b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
                      <p> <b>Возраст:</b>  ${e.age}</p>
                   </div>
+                 
                   <hr>
                `
                };
+              
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
+                  <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
+                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
                   <div class="border-cart border-cart-dent">
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> ${e.targetVisit}</p>
@@ -68,6 +76,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
+                  <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
+                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
                   <div class=" border-cart border-cart-therap">
                      <p><b>Врач:</b> ${doctorTherap}</p>
                      <p><b>Цель визита:</b> ${e.targetVisit}</p>
