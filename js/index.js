@@ -44,7 +44,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   root.innerHTML += `
                   <div class="border-cart border-cart-card cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
                      <p><b>Врач:</b>${doctorCard}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -65,7 +65,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   root.innerHTML += `
                   <div class="border-cart border-cart-dent cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -83,7 +83,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   root.innerHTML += `
                   <div class=" border-cart border-cart-therap cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
                      <p><b>Врач:</b> ${doctorTherap}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -97,6 +97,16 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                `
                }
 
+               const delVisit = document.getElementById("del-visit");
+
+
+               delVisit.addEventListener("click", (evt) => {
+                     const id = evt.target.dataset.id;
+                     axios.delete(BASE_URL + "posts" + "/" + id).then(({ data }) => {
+                        console.log(data);
+                        evt.target.closest(".post").remove();
+                     })
+               })
 
 
 
@@ -125,7 +135,6 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             }
          });
       })
-
 
 
 
