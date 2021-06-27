@@ -42,9 +42,11 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
+                  <div class="card show">
+                  <div id="overlay"></div>
                   <div class="border-cart border-cart-card cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b>${doctorCard}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -57,15 +59,18 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
                      <p><b>Возраст:</b>  ${e.age}</p>
                   </div>
+                  </div>
                `
                };
 
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
+                  <div class="card show">
+                  <div id="overlay"></div>
                   <div class="border-cart border-cart-dent cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -75,15 +80,17 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Дата последнего посещения:</b> ${e.dateOfLastVisit}</p>
                   </div>
-                  
+                  </div>
                `
                }
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
+                  <div class="card show">
+                  <div id="overlay"></div>
                   <div class=" border-cart border-cart-therap cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit">X</button>
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b> ${doctorTherap}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -93,45 +100,33 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Возраст:</b> ${e.age}</p>
                   </div>
+                  </div>
+               `}
+
+
+
+               function removeElem(delElem, attribute, attributeName) {
+                    if (!(delElem && attribute && attributeName)) return;
+                    return function(e) {
+                      let target = e.target;
+                      if (!(target.hasAttribute(attribute) ?
+                          (target.getAttribute(attribute) === attributeName ? true : false) : false)) return;
+                      let elem = target;
+                 
+                      while (target != this) {
+                        if (target.classList.contains(delElem)) {
+                          target.remove();
+                           
+                          return;
+                        }
+                        target = target.parentNode;
+                      }
+                      return;
+                    };
+                  }
                   
-               `
-               }
-
-               const delVisit = document.getElementById("del-visit");
-
-
-               delVisit.addEventListener("click", (evt) => {
-                     const id = evt.target.dataset.id;
-                     axios.delete(BASE_URL + "posts" + "/" + id).then(({ data }) => {
-                        console.log(data);
-                        evt.target.closest(".post").remove();
-                     })
-               })
-
-
-
-               searchBtn.addEventListener("click", () => {
-                  // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
-                  // console.log(filterOne);
-
-                  // if (filterSearch.value == e.targetVisit) {
-                  //    console.log(e.targetVisit);
-                  //    console.log(filterSearch.value == e.targetVisit);
-                  //    // console.log(e.targetVisit.search(filterSearch.value));
-                  //    // visCard.style.display = "none";
-                  //    root.filter(filterSearch.value);
-
-                  //    // e.targetVisit.style.dispay = "none";
-                  //    console.log("It`s Work!");
-                  // } else {
-
-                  //    console.log("No work!");
-                  //    // visCard.style.display = "none";
-
-                  // };
-
-
-               })
+                  
+                  document.addEventListener("click", removeElem("card", "data-del", "delete"));
             }
          });
       })

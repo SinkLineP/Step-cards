@@ -9,7 +9,7 @@
   "visit": [
     {
       "doctor": "card",
-      "targetVisit": "Прикол",
+      "targetVisit": "",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -24,8 +24,8 @@
       "id": 1
     },
     {
-      "doctor": "card",
-      "targetVisit": "мячик",
+      "doctor": "dent",
+      "targetVisit": "",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -38,54 +38,6 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 2
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "Бровь",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 3
-    },
-    {
-      "doctor": "dent",
-      "targetVisit": "Устал",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 4
-    },
-    {
-      "doctor": "therap",
-      "targetVisit": "Сума",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 5
     }
   ]
 }

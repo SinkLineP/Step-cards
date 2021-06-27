@@ -188,3 +188,9 @@ form p {
   margin-left: 813px;
   margin-bottom: 10px;
 }
+
+/* delete */
+
+#overlay button {
+  margin: 10px 0px;
+}
