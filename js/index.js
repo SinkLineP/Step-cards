@@ -42,9 +42,9 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
+                  <div class="border-cart border-cart-card cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
                   <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
-                  <div class="border-cart border-cart-card cardItem">
                      <p><b>Врач:</b>${doctorCard}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -63,9 +63,9 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
+                  <div class="border-cart border-cart-dent cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
                   <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
-                  <div class="border-cart border-cart-dent cardItem">
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
@@ -81,9 +81,9 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
+                  <div class=" border-cart border-cart-therap cardItem">
                   <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
                   <button type="button" class=" del-cart btn btn-outline-secondary">X</button>
-                  <div class=" border-cart border-cart-therap cardItem">
                      <p><b>Врач:</b> ${doctorTherap}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>

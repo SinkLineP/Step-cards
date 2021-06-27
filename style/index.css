@@ -127,7 +127,7 @@ form p {
 
 .border-cart {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  /* margin-top: 30px; */
+  margin-top: 30px;
   margin-left: 50px;
   width: 900px;
   background-color: 1px solid rgb(255, 255, 255);
@@ -180,11 +180,11 @@ form p {
 /* form */
 
 .change-form {
-  margin-left: 1000px;
-  margin-bottom: -120px;
+  margin-left: 30px;
+  margin-bottom: -60px;
 }
 
 .del-cart {
-  margin-left: 909px;
-  margin-bottom: -70px;
+  margin-left: 813px;
+  margin-bottom: 10px;
 }
