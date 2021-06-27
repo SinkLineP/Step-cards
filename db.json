@@ -4,11 +4,6 @@
       "id": 1,
       "email": "admin@gmail.com",
       "password": "admin"
-    },
-    {
-      "id": 2,
-      "email": "test@gmail.com",
-      "password": "admin"
     }
   ],
   "visit": [

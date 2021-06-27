@@ -128,6 +128,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const visitTemplate = document.getElementById("visit-template");
       const addVisitForm = visitTemplate.content.children["visit-form"].cloneNode(true);
       const btnCreateVisit = document.getElementById("create-visit");
+      const btnCloseVisit = document.getElementById("close-visit");
       // visit-form-id
       const doctor = document.getElementById("doctor");
       const targetVisit = document.getElementById("visit-target");
@@ -141,7 +142,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const cardio = document.getElementById("cardiovascular-diseases");
       const age = document.getElementById("age");
       const dateLastVisit = document.getElementById("start");
-
+      const ModalClose = document.getElementById("modal-close");
 
       btnCreateVisit.addEventListener("click", async () => {
          const res = await axios.post('http://localhost:3000/visit', {
@@ -159,7 +160,12 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "dateOfLastVisit": dateLastVisit.value,
             "authorVisit": emailUser,
          });
-         location.reload()
+         location.reload();
+      })
+
+      btnCloseVisit.addEventListener("click", () => {
+         ModalClose.click();
+         console.log("Modal-Close");
       })
 
       // --------------
@@ -192,9 +198,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const btnLogin = document.getElementById("btn-login-submit");
       const formTemplateLogin = document.getElementById("form-template");
       const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
-      const ModalClose = document.getElementById("modal-close");
       const alertError = document.createElement("div");
-
+      const ModalClose = document.getElementById("modal-close");
 
       btnLogin.addEventListener("click", () => {
          const emailLogValue = emailLog.value;
