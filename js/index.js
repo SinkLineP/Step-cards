@@ -1,7 +1,7 @@
 import Visit from "./modules/Visit.js";
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
-import {filter, submit} from "./modules/Filter-Search.js"
+import { filter, submit } from "./modules/Filter-Search.js"
 
 const visit = new Visit();
 const login = new LogIn();
@@ -44,7 +44,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Врач:</b>${doctorCard}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
-                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
                      <p><b>Имя: </b>${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
@@ -63,7 +63,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
-                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
                      <p><b>Имя: </b>${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
@@ -79,7 +79,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Врач:</b> ${doctorTherap}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
                      <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
-                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
                      <p><b>Имя:</b> ${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
@@ -112,9 +112,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
                   // };
 
-
-
-
+                  
                })
             }
          });
