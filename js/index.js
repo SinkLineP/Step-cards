@@ -23,7 +23,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
 
-
+   
 
    axios.get("http://localhost:3000/visit")
       .then(res => res)
@@ -33,51 +33,74 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorCard}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Обычное давление: ${e.pressure}</p>
-                     <p>Индекс массы тела: ${e.indexMass}</p>
-                     <p>Перенесенные заболевания сердечно-сосудистой системы: ${e.cardiovascularDiseases}</p>
-                     <p>Возраст: ${e.age}</p>
+                  <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
+                  <div class="border-cart border-cart-card">
+                   <p> <b>Врач:</b>${doctorCard} <button type="button" class=" btn btn-outline-danger">X</button></p>
+                     <p> <b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p> <b>Краткое описание визита:</b> ${e.description}</p>
+                     <p> <b>Срочность:</b> ${e.urgency}</p>
+                     <p> <b>Имя: </b>${e.name}</p>
+                     <p> <b>Фамилия:</b> ${e.lastname}</p>
+                     <p> <b>Отчество:</b> ${e.middlename}</p>
+                     <p> <b>Обычное давление:</b> ${e.pressure}</p>
+                     <p> <b>Индекс массы тела: </b>${e.indexMass}</p>
+                     <p> <b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
+                     <p> <b>Возраст:</b>  ${e.age}</p>
                   </div>
+                 
                   <hr>
-               `};
+               `
+               };
+              
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorDent}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Дата последнего посещения: ${e.dateOfLastVisit}</p>
+                  <div class="border-cart border-cart-dent">
+                     <p><b>Врач:</b> ${doctorDent}</p>
+                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p><b>Краткое описание визита: </b>${e.description}</p>
+                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Имя: </b>${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Дата последнего посещения:</b> ${e.dateOfLastVisit}</p>
                   </div>
                   <hr>
-               `}
+               `
+               }
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
-                  <div>
-                     <p>Врач: ${doctorTherap}</p>
-                     <p>Цель визита: ${e.targetVisit}</p>
-                     <p>Краткое описание визита: ${e.description}</p>
-                     <p>Срочность: ${e.urgency}</p>
-                     <p>Имя: ${e.name}</p>
-                     <p>Фамилия: ${e.lastname}</p>
-                     <p>Отчество: ${e.middlename}</p>
-                     <p>Возраст: ${e.age}</p>
+                  <div class=" border-cart border-cart-therap">
+                     <p><b>Врач:</b> ${doctorTherap}</p>
+                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
+                     <p><b>Краткое описание визита:</b> ${e.description}</p>
+                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Имя:</b> ${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Возраст:</b> ${e.age}</p>
                   </div>
                   <hr>
-               `}
+               `
+               }
+
+               // searchBtn.addEventListener("click", () => {
+               //    // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
+               //    // console.log(filterOne);
+               //    if (filterSearch.value == e.targetVisit || 
+               //        filterSearch.value == e.description) {
+               //          filterSearch.search(filterSearch.value);
+
+               //          console.log(filterSearch.value == e.targetVisit);
+               //          console.log(filterSearch.value == e.description);
+                     
+               //          console.log("It`s Work!");
+               //    } else {
+
+               //       console.log("No work!");
+               //    };
+               // })
             }
          });
       })
@@ -105,7 +128,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const dateLastVisit = document.getElementById("start");
 
 
-      btnCreateVisit.addEventListener("click", async () => {
+      btnCreateVisit.addEventListener("click", async() => {
          const res = await axios.post('http://localhost:3000/visit', {
             "doctor": doctor.value,
             "targetVisit": targetVisit.value,
@@ -125,11 +148,11 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       })
 
       // --------------
-      const select = document.querySelector('select');
+      const select = document.getElementById('doctor');
       const content = {};
 
       [...select.querySelectorAll('option')]
-         .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+      .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
       const onChange = value => {
          Object.keys(content).forEach(id => {
@@ -190,7 +213,3 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
    });
 
 }
-
-
-
-

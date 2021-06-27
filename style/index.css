@@ -104,9 +104,11 @@ form p {
   font-family: Montserrat, sans-serif;
   text-shadow: 0 0 0.1em rgb(0, 0, 0);
 }
+
 .modal-content {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
 }
+
 /* FORM */
 
 /* MODAL-REGISTER */
@@ -117,9 +119,72 @@ form p {
   margin-top: 5%;
 }
 
-
 /* ALERT-ERROR */
 
 .alert-error-size {
   position: absolute;
+}
+
+.border-cart {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  margin-top: 30px;
+  margin-left: 50px;
+  width: 900px;
+  background-color: 1px solid rgb(255, 255, 255);
+  border-top: 1px solid rgb(255, 255, 255);
+  border-bottom: 1px solid rgb(255, 255, 255);
+  border-left: 1px solid rgb(255, 255, 255);
+  border-right: 1px solid rgb(255, 255, 255);
+}
+
+.border-cart-card p {
+  background-color: rgba(216, 30, 30, 0.068);
+  width: 820px;
+  box-shadow: 0 0 10px rgb(119, 12, 12);
+  margin-left: 30px;
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+}
+.border-cart-therap p {
+  background-color: rgba(52, 50, 189, 0.068);
+  width: 820px;
+  box-shadow: 0 0 10px rgb(35, 47, 153);
+  margin-left: 30px;
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+}
+.border-cart-dent p {
+  background-color: rgba(25, 144, 25, 0.068);
+  width: 820px;
+  box-shadow: 0 0 10px rgb(25, 172, 12);
+  margin-left: 30px;
+  margin-top: 15px;
+  color: rgb(0, 0, 0);
+}
+
+/* search */
+
+.site-search {
+  width: 100%;
+}
+
+.hide {
+  visibility: hidden;
+  position: absolute;
+}
+
+.show {
+  visibility: visible;
+}
+
+/* form */
+
+.change-form {
+  margin-left: 30px;
+  margin-bottom: -60px;
+}
+
+.del-cart {
+  margin-left: 813px;
+  margin-bottom: 10px;
 }
