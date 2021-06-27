@@ -25,9 +25,14 @@
     </section>
     <section class="filter">
         <div class="btn-group">
-            <div class="filter-input">
+            <!-- <div class="filter-input">
                 <input type="text" placeholder="&#128269; Search by title" id="filter-search">
-            </div>
+            </div> -->
+
+            <form class="search-form filter-input" action="" method="GET">
+                <label hidden for="site-search">Фильтр</label>
+                <input placeholder="&#128269; Search by title" type="search" name="site-search" id="site-search" class="site-search">
+            </form>
             
             <form class="filter-one">
                 <div class="dropdown">
@@ -58,7 +63,8 @@
     <section class="forms-board">
         <hr>
         <div id="root"></div>
-
+        <!-- <div id="form"></div> -->
+        
         <!-- login -->
         <template id="form-template">
             <form id="login-form">

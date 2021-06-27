@@ -14,7 +14,7 @@
   "visit": [
     {
       "doctor": "card",
-      "targetVisit": "",
+      "targetVisit": "Прикол",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -30,7 +30,7 @@
     },
     {
       "doctor": "card",
-      "targetVisit": "dasdsadas",
+      "targetVisit": "мячик",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -45,8 +45,24 @@
       "id": 2
     },
     {
-      "doctor": "therap",
-      "targetVisit": "rrrrrrrrrrr",
+      "doctor": "card",
+      "targetVisit": "Бровь",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-15",
+      "authorVisit": "admin@gmail.com",
+      "id": 3
+    },
+    {
+      "doctor": "dent",
+      "targetVisit": "Устал",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -61,24 +77,8 @@
       "id": 4
     },
     {
-      "doctor": "card",
-      "targetVisit": "fdsfsfd",
-      "description": "sfsdfsdf",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 6
-    },
-    {
-      "doctor": "dent",
-      "targetVisit": "fsdfsdf",
+      "doctor": "therap",
+      "targetVisit": "Сума",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -90,7 +90,7 @@
       "age": "",
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
-      "id": 7
+      "id": 5
     }
   ]
 }

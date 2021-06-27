@@ -1,6 +1,7 @@
 import Visit from "./modules/Visit.js";
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
+import {filter, submit} from "./modules/Filter-Search.js"
 
 const visit = new Visit();
 const login = new LogIn();
@@ -19,11 +20,17 @@ const filterTwo = document.getElementById("filter-two");
 const searchBtn = document.getElementById("searchBtnFilter");
 
 
+
+
+
+
 if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password') == false) {
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
 
-   
+   let form = document.querySelector('.search-form');
+   form.addEventListener('keyup', filter);
+   form.addEventListener('submit', submit);
 
    axios.get("http://localhost:3000/visit")
       .then(res => res)
@@ -33,71 +40,82 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
-                  <div class="border-cart border-cart-card">
-                   <p> <b>Врач:</b>${doctorCard}</p>
-                     <p> <b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p> <b>Краткое описание визита:</b> ${e.description}</p>
-                     <p> <b>Срочность:</b> ${e.urgency}</p>
-                     <p> <b>Имя: </b>${e.name}</p>
-                     <p> <b>Фамилия:</b> ${e.lastname}</p>
-                     <p> <b>Отчество:</b> ${e.middlename}</p>
-                     <p> <b>Обычное давление:</b> ${e.pressure}</p>
-                     <p> <b>Индекс массы тела: </b>${e.indexMass}</p>
-                     <p> <b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
-                     <p> <b>Возраст:</b>  ${e.age}</p>
+                  <div class="border-cart border-cart-card cardItem">
+                     <p><b>Врач:</b>${doctorCard}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
+                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Имя: </b>${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Обычное давление:</b> ${e.pressure}</p>
+                     <p><b>Индекс массы тела: </b>${e.indexMass}</p>
+                     <p><b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
+                     <p><b>Возраст:</b>  ${e.age}</p>
                   </div>
-                  <hr>
+                  
                `
                };
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
-                  <div class="border-cart border-cart-dent">
+                  <div class="border-cart border-cart-dent cardItem">
                      <p><b>Врач:</b> ${doctorDent}</p>
-                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p><b>Краткое описание визита: </b>${e.description}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
                      <p><b>Срочность:</b> ${e.urgency}</p>
                      <p><b>Имя: </b>${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Дата последнего посещения:</b> ${e.dateOfLastVisit}</p>
                   </div>
-                  <hr>
+                  
                `
                }
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
-                  <div class=" border-cart border-cart-therap">
+                  <div class="border-cart border-cart-therap cardItem">
                      <p><b>Врач:</b> ${doctorTherap}</p>
-                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p><b>Краткое описание визита:</b> ${e.description}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
                      <p><b>Срочность:</b> ${e.urgency}</p>
                      <p><b>Имя:</b> ${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Возраст:</b> ${e.age}</p>
                   </div>
-                  <hr>
+                  
                `
                }
 
-               // searchBtn.addEventListener("click", () => {
-               //    // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
-               //    // console.log(filterOne);
-               //    if (filterSearch.value == e.targetVisit || 
-               //        filterSearch.value == e.description) {
-               //          filterSearch.search(filterSearch.value);
 
-               //          console.log(filterSearch.value == e.targetVisit);
-               //          console.log(filterSearch.value == e.description);
-                     
-               //          console.log("It`s Work!");
-               //    } else {
 
-               //       console.log("No work!");
-               //    };
-               // })
+
+               searchBtn.addEventListener("click", () => {
+                  // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
+                  // console.log(filterOne);
+
+                  // if (filterSearch.value == e.targetVisit) {
+                  //    console.log(e.targetVisit);
+                  //    console.log(filterSearch.value == e.targetVisit);
+                  //    // console.log(e.targetVisit.search(filterSearch.value));
+                  //    // visCard.style.display = "none";
+                  //    root.filter(filterSearch.value);
+
+                  //    // e.targetVisit.style.dispay = "none";
+                  //    console.log("It`s Work!");
+                  // } else {
+
+                  //    console.log("No work!");
+                  //    // visCard.style.display = "none";
+
+                  // };
+
+
+
+
+               })
             }
          });
       })
@@ -125,7 +143,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const dateLastVisit = document.getElementById("start");
 
 
-      btnCreateVisit.addEventListener("click", async() => {
+      btnCreateVisit.addEventListener("click", async () => {
          const res = await axios.post('http://localhost:3000/visit', {
             "doctor": doctor.value,
             "targetVisit": targetVisit.value,
@@ -149,7 +167,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const content = {};
 
       [...select.querySelectorAll('option')]
-      .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+         .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
       const onChange = value => {
          Object.keys(content).forEach(id => {
