@@ -70,38 +70,6 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 4
-    },
-    {
-      "doctor": "therap",
-      "targetVisit": "",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 5
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "ddddddddddddd",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 6
     }
   ]
 }

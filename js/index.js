@@ -69,7 +69,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   <div class="card show">
                   <div id="overlay"></div>
                   <div class="border-cart border-cart-dent cardItem">
-                  <button type="button" class="change-form btn btn-outline-success"  >Редактировать</button>
+                  <button type="button" class="change-form btn btn-outline-success"  id="change-visit">Редактировать</button>
                   <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b> ${doctorDent}</p>
                      <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
@@ -103,8 +103,10 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   </div>
                `}
 
+
+
                const changeForm = document.getElementById("form-change");
-               console.log(changeForm)
+               
                changeForm.addEventListener("click", () => {
                   root.append(modal.render(visit.form))
                   const visitTemplate = document.getElementById("visit-template");
@@ -127,23 +129,25 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   const ModalClose = document.getElementById("modal-close");
 
                   btnCreateVisit.addEventListener("click", async () => {
-                     const res = await axios.post('http://localhost:3000/visit', {
-                        "doctor": doctor.value,
-                        "targetVisit": targetVisit.value,
-                        "description": desc.value,
-                        "urgency": urgency.value,
-                        "name": firstName.value,
-                        "lastname": lastName.value,
-                        "middlename": middleName.value,
-                        "pressure": press.value,
-                        "indexMass": indexMass.value,
-                        "cardiovascularDiseases": cardio.value,
-                        "age": age.value,
-                        "dateOfLastVisit": dateLastVisit.value,
-                        "authorVisit": emailUser,
-                     });
-                     location.reload();
+                     await axios.delete("http://localhost:3000/visit/" + e.id);
+                  //    axios.post('http://localhost:3000/visit', {
+                  //    "doctor": doctor.value,
+                  //    "targetVisit": targetVisit.value,
+                  //    "description": desc.value,
+                  //    "urgency": urgency.value,
+                  //    "name": firstName.value,
+                  //    "lastname": lastName.value,
+                  //    "middlename": middleName.value,
+                  //    "pressure": press.value,
+                  //    "indexMass": indexMass.value,
+                  //    "cardiovascularDiseases": cardio.value,
+                  //    "age": age.value,
+                  //    "dateOfLastVisit": dateLastVisit.value,
+                  //    "authorVisit": emailUser,
+                  // });   
+                     // location.reload();
                   })
+                  
 
                   btnCloseVisit.addEventListener("click", () => {
                      ModalClose.click();
