@@ -132,7 +132,6 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
                      axios.delete("http://localhost:3000/visit/" + e.id);
 
-                     console.log("лох");
 
 
                      location.reload();

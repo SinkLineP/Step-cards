@@ -9,7 +9,7 @@
   "visit": [
     {
       "doctor": "card",
-      "targetVisit": "как",
+      "targetVisit": "ррррррррр",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -22,70 +22,6 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 1
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "сом",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 2
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "лох",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 3
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "ВОТ ТАК ВОТ",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 4
-    },
-    {
-      "doctor": "card",
-      "targetVisit": "rfr",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 5
     }
   ]
 }
