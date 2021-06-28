@@ -9,7 +9,7 @@
   "visit": [
     {
       "doctor": "card",
-      "targetVisit": "ррррррррр",
+      "targetVisit": "лох\n",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -22,6 +22,38 @@
       "dateOfLastVisit": "2021-06-15",
       "authorVisit": "admin@gmail.com",
       "id": 1
+    },
+    {
+      "doctor": "card",
+      "targetVisit": "ч",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-15",
+      "authorVisit": "admin@gmail.com",
+      "id": 2
+    },
+    {
+      "doctor": "card",
+      "targetVisit": "",
+      "description": "",
+      "urgency": "обычная",
+      "name": "",
+      "lastname": "",
+      "middlename": "",
+      "pressure": "",
+      "indexMass": "",
+      "cardiovascularDiseases": "",
+      "age": "",
+      "dateOfLastVisit": "2021-06-15",
+      "authorVisit": "admin@gmail.com",
+      "id": 3
     }
   ]
 }
