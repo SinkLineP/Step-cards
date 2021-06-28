@@ -129,25 +129,27 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   const ModalClose = document.getElementById("modal-close");
 
                   btnCreateVisit.addEventListener("click", async () => {
-                     await axios.delete("http://localhost:3000/visit/" + e.id);
-                  //    axios.post('http://localhost:3000/visit', {
-                  //    "doctor": doctor.value,
-                  //    "targetVisit": targetVisit.value,
-                  //    "description": desc.value,
-                  //    "urgency": urgency.value,
-                  //    "name": firstName.value,
-                  //    "lastname": lastName.value,
-                  //    "middlename": middleName.value,
-                  //    "pressure": press.value,
-                  //    "indexMass": indexMass.value,
-                  //    "cardiovascularDiseases": cardio.value,
-                  //    "age": age.value,
-                  //    "dateOfLastVisit": dateLastVisit.value,
-                  //    "authorVisit": emailUser,
-                  // });   
-                     // location.reload();
+
+                     axios.delete("http://localhost:3000/visit/" + e.id);
+
+                     location.reload();
+                     const res = await axios.post('http://localhost:3000/visit', {
+                        "doctor": doctor.value,
+                        "targetVisit": targetVisit.value,
+                        "description": desc.value,
+                        "urgency": urgency.value,
+                        "name": firstName.value,
+                        "lastname": lastName.value,
+                        "middlename": middleName.value,
+                        "pressure": press.value,
+                        "indexMass": indexMass.value,
+                        "cardiovascularDiseases": cardio.value,
+                        "age": age.value,
+                        "dateOfLastVisit": dateLastVisit.value,
+                        "authorVisit": emailUser,
+
+                     });
                   })
-                  
 
                   btnCloseVisit.addEventListener("click", () => {
                      ModalClose.click();
@@ -159,7 +161,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                   const content = {};
 
                   [...select.querySelectorAll('option')]
-                     .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+                  .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
                   const onChange = value => {
                      Object.keys(content).forEach(id => {
@@ -172,6 +174,13 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
                   modal.show();
                });
+
+
+
+
+
+            
+
 
                document.addEventListener("click", removeElem("card", "data-del", "delete"));
             }
@@ -229,7 +238,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const content = {};
 
       [...select.querySelectorAll('option')]
-         .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+      .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
       const onChange = value => {
          Object.keys(content).forEach(id => {

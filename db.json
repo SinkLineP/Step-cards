@@ -9,7 +9,7 @@
   "visit": [
     {
       "doctor": "card",
-      "targetVisit": "",
+      "targetVisit": "как",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -24,8 +24,8 @@
       "id": 1
     },
     {
-      "doctor": "dent",
-      "targetVisit": "",
+      "doctor": "card",
+      "targetVisit": "сом",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -41,7 +41,7 @@
     },
     {
       "doctor": "card",
-      "targetVisit": "",
+      "targetVisit": "лох",
       "description": "",
       "urgency": "обычная",
       "name": "",
@@ -56,8 +56,8 @@
       "id": 3
     },
     {
-      "doctor": "dent",
-      "targetVisit": "",
+      "doctor": "card",
+      "targetVisit": "ВОТ ТАК ВОТ",
       "description": "",
       "urgency": "обычная",
       "name": "",
