@@ -1,6 +1,8 @@
 import Visit from "./modules/Visit.js";
-import LogIn from "./LogIn.js";
-import Modal from "./Modal.js";
+import LogIn from "./modules/LogIn.js";
+import Modal from "./modules/Modal.js";
+import { filter, submit } from "./modules/Filter-Search.js";
+import { removeElem } from "./modules/Delete-Visit.js"
 
 const visit = new Visit();
 const login = new LogIn();
@@ -19,11 +21,18 @@ const filterTwo = document.getElementById("filter-two");
 const searchBtn = document.getElementById("searchBtnFilter");
 
 
+
+
+
+
 if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password') == false) {
    loginModal.style.display = "none";
    btnVisit.classList.remove("hide-btn");
 
-   
+   let form = document.querySelector('.search-form');
+   form.addEventListener('keyup', filter);
+   form.addEventListener('submit', submit);
+
 
    axios.get("http://localhost:3000/visit")
       .then(res => res)
@@ -33,86 +42,75 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                if (e.doctor == "card") {
                   const doctorCard = "Кардиолог"
                   root.innerHTML += `
-                  <button type="button" class="change-form btn btn-outline-success">Редактировать</button>
-                  <div class="border-cart border-cart-card">
-                   <p> <b>Врач:</b>${doctorCard} <button type="button" class=" btn btn-outline-danger">X</button></p>
-                     <p> <b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p> <b>Краткое описание визита:</b> ${e.description}</p>
-                     <p> <b>Срочность:</b> ${e.urgency}</p>
-                     <p> <b>Имя: </b>${e.name}</p>
-                     <p> <b>Фамилия:</b> ${e.lastname}</p>
-                     <p> <b>Отчество:</b> ${e.middlename}</p>
-                     <p> <b>Обычное давление:</b> ${e.pressure}</p>
-                     <p> <b>Индекс массы тела: </b>${e.indexMass}</p>
-                     <p> <b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
-                     <p> <b>Возраст:</b>  ${e.age}</p>
+                  <div class="card show">
+                  <div id="overlay"></div>
+                  <div class="border-cart border-cart-card cardItem">
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
+                     <p><b>Врач:</b>${doctorCard}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
+                     <p><b>Имя: </b>${e.name}</p>
+                     <p><b>Фамилия:</b> ${e.lastname}</p>
+                     <p><b>Отчество:</b> ${e.middlename}</p>
+                     <p><b>Обычное давление:</b> ${e.pressure}</p>
+                     <p><b>Индекс массы тела: </b>${e.indexMass}</p>
+                     <p><b>Перенесенные заболевания сердечно-сосудистой системы:</b> ${e.cardiovascularDiseases}</p>
+                     <p><b>Возраст:</b>  ${e.age}</p>
                   </div>
-                 
-                  <hr>
+                  </div>
                `
                };
-              
+
                if (e.doctor == "dent") {
                   const doctorDent = "Стоматолог";
                   root.innerHTML += `
-                  <div class="border-cart border-cart-dent">
+                  <div class="card show">
+                  <div id="overlay"></div>
+                  <div class="border-cart border-cart-dent cardItem">
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b> ${doctorDent}</p>
-                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p><b>Краткое описание визита: </b>${e.description}</p>
-                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
                      <p><b>Имя: </b>${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Дата последнего посещения:</b> ${e.dateOfLastVisit}</p>
                   </div>
-                  <hr>
+                  </div>
                `
                }
                if (e.doctor == "therap") {
                   const doctorTherap = "Терапевт";
                   root.innerHTML += `
-                  <div class=" border-cart border-cart-therap">
+                  <div class="card show">
+                  <div id="overlay"></div>
+                  <div class=" border-cart border-cart-therap cardItem">
+                  <button type="button" class="del-cart btn btn-outline-secondary" id="del-visit" data-del="delete">X</button>
                      <p><b>Врач:</b> ${doctorTherap}</p>
-                     <p><b>Цель визита:</b> ${e.targetVisit}</p>
-                     <p><b>Краткое описание визита:</b> ${e.description}</p>
-                     <p><b>Срочность:</b> ${e.urgency}</p>
+                     <p><b>Цель визита:</b> <span>${e.targetVisit}</span></p>
+                     <p><b>Краткое описание визита:</b> <span>${e.description}</span></p>
+                     <p><b>Срочность:</b> <span>${e.urgency}</span></p>
                      <p><b>Имя:</b> ${e.name}</p>
                      <p><b>Фамилия:</b> ${e.lastname}</p>
                      <p><b>Отчество:</b> ${e.middlename}</p>
                      <p><b>Возраст:</b> ${e.age}</p>
                   </div>
-                  <hr>
-               `
-               }
+                  </div>
+               `}
 
-               // searchBtn.addEventListener("click", () => {
-               //    // console.log("Seacrh " + filterSearch.value + " " + "One-filter: " + filterOne.options[filterOne.selectedIndex].text + " " + "Two-filter: " + filterTwo.options[filterTwo.selectedIndex].text);
-               //    // console.log(filterOne);
-               //    if (filterSearch.value == e.targetVisit || 
-               //        filterSearch.value == e.description) {
-               //          filterSearch.search(filterSearch.value);
 
-               //          console.log(filterSearch.value == e.targetVisit);
-               //          console.log(filterSearch.value == e.description);
-                     
-               //          console.log("It`s Work!");
-               //    } else {
-
-               //       console.log("No work!");
-               //    };
-               // })
+               document.addEventListener("click", removeElem("card", "data-del", "delete"));
             }
          });
       })
 
 
-
-
    visitModal.addEventListener("click", () => {
-      root.append(modal.render(visit.form))
-      const visitTemplate = document.getElementById("visit-template");
-      const addVisitForm = visitTemplate.content.children["visit-form"].cloneNode(true);
+      root.append(modal.render(visit.form));
       const btnCreateVisit = document.getElementById("create-visit");
+      const btnCloseVisit = document.getElementById("close-visit");
       // visit-form-id
       const doctor = document.getElementById("doctor");
       const targetVisit = document.getElementById("visit-target");
@@ -126,7 +124,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const cardio = document.getElementById("cardiovascular-diseases");
       const age = document.getElementById("age");
       const dateLastVisit = document.getElementById("start");
-
+      const ModalClose = document.getElementById("modal-close");
 
       btnCreateVisit.addEventListener("click", async() => {
          const res = await axios.post('http://localhost:3000/visit', {
@@ -144,7 +142,12 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
             "dateOfLastVisit": dateLastVisit.value,
             "authorVisit": emailUser,
          });
-         location.reload()
+         location.reload();
+      })
+
+      btnCloseVisit.addEventListener("click", () => {
+         ModalClose.click();
+         console.log("Modal-Close");
       })
 
       // --------------
@@ -177,9 +180,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const btnLogin = document.getElementById("btn-login-submit");
       const formTemplateLogin = document.getElementById("form-template");
       const addLoginForm = formTemplateLogin.content.children["login-form"].cloneNode(true);
-      const ModalClose = document.getElementById("modal-close");
       const alertError = document.createElement("div");
-
+      const ModalClose = document.getElementById("modal-close");
 
       btnLogin.addEventListener("click", () => {
          const emailLogValue = emailLog.value;

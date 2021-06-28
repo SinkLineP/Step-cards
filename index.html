@@ -23,42 +23,17 @@
             </a>
         </div>
     </section>
-    <!-- <section class="filter">
+    <section class="filter">
         <div class="btn-group">
-            <div class="filter-input">
-                <input type="text" placeholder="&#128269; Search by title" id="filter-search">
-            </div>
-            
-            <form class="filter-one">
-                <div class="dropdown">
-                    <select id="filter-one" class="btn btn-primary dropdown-toggle filter-btn-all">
-                        <option> All </option>
-                        <option> Open </option>
-                        <option> Done </option>
-                    </select>
-                </div>
+            <form class="search-form filter-input" action="" method="GET">
+                <label hidden for="site-search">Фильтр</label>
+                <input placeholder="&#128269; Search by title" type="search" name="site-search" id="site-search" class="site-search">
             </form>
-            
-            <form class="filter-two">
-                <div class="dropdown">
-                    <select id="filter-two" class="btn btn-primary dropdown-toggle filter-btn-all">
-                        <option> All </option>
-                        <option> Hight </option>
-                        <option> Normal </option>
-                        <option> Low </option>
-                    </select>
-                </div>
-            </form>
-            
-            <div class="filter-search">
-                <button type="submit" class="btn btn-success filter-btn-search" id="searchBtnFilter">Search</button>
-            </div>
         </div>
-    </section> -->
+    </section>
     <section class="forms-board">
         <hr>
-        <div id="root"></div>
-
+        <div id="root"></div>   
         <!-- login -->
         <template id="form-template">
             <form id="login-form">
@@ -67,7 +42,6 @@
                 <br /> <br /> <label for="password">Your password: </label>
                 <input id="userPassword" type="password" size="39" required>
                 <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit">LogIn</button>
-                <!-- <button type="button" class="btn btn-outline-success btn-form" id="btn-login-submit-hide">LogIn</button> -->
             </form>
         </template>
         <!-- visit -->
