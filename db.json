@@ -7,53 +7,6 @@
     }
   ],
   "visit": [
-    {
-      "doctor": "card",
-      "targetVisit": "advxf",
-      "description": "sdfsd",
-      "urgency": "обычная",
-      "name": "fsdf",
-      "lastname": "sd",
-      "middlename": "f",
-      "pressure": "sdf",
-      "indexMass": "sd",
-      "cardiovascularDiseases": "ffdsf",
-      "age": "s2342131",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 1
-    },
-    {
-      "doctor": "dent",
-      "targetVisit": "sdfsdf",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 2
-    },
-    {
-      "doctor": "therap",
-      "targetVisit": "fsdfsd",
-      "description": "",
-      "urgency": "обычная",
-      "name": "",
-      "lastname": "",
-      "middlename": "",
-      "pressure": "",
-      "indexMass": "",
-      "cardiovascularDiseases": "",
-      "age": "",
-      "dateOfLastVisit": "2021-06-15",
-      "authorVisit": "admin@gmail.com",
-      "id": 3
-    }
+ 
   ]
 }
