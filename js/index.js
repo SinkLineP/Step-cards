@@ -132,6 +132,8 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
                      axios.delete("http://localhost:3000/visit/" + e.id);
 
+
+
                      location.reload();
                      const res = await axios.post('http://localhost:3000/visit', {
                         "doctor": doctor.value,
