@@ -1,7 +1,10 @@
 import Visit from "./modules/Visit.js";
 import LogIn from "./LogIn.js";
 import Modal from "./Modal.js";
-import { filter, submit } from "./modules/Filter-Search.js"
+import {
+   filter,
+   submit
+} from "./modules/Filter-Search.js"
 
 const visit = new Visit();
 const login = new LogIn();
@@ -100,100 +103,107 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
                      <p><b>Возраст:</b> ${e.age}</p>
                   </div>
                   </div>
-               `}
-  
+               `
+               }
+
                const changeForm = document.getElementById("form-change");
-               console.log(changeForm)
-                     changeForm.addEventListener("click", () => {
-                        root.append(modal.render(visit.form))
-                        const visitTemplate = document.getElementById("visit-template");
-                        const addVisitForm = visitTemplate.content.children["visit-form"].cloneNode(true);
-                        const btnCreateVisit = document.getElementById("create-visit");
-                        const btnCloseVisit = document.getElementById("close-visit");
-                        // visit-form-id
-                        const doctor = document.getElementById("doctor");
-                        const targetVisit = document.getElementById("visit-target");
-                        const desc = document.getElementById("description");
-                        const urgency = document.getElementById("urgency");
-                        const firstName = document.getElementById("name");
-                        const lastName = document.getElementById("last-name");
-                        const middleName = document.getElementById("middle-name");
-                        const press = document.getElementById("pressure");
-                        const indexMass = document.getElementById("index-mass");
-                        const cardio = document.getElementById("cardiovascular-diseases");
-                        const age = document.getElementById("age");
-                        const dateLastVisit = document.getElementById("start");
-                        const ModalClose = document.getElementById("modal-close");
-                  
-                        btnCreateVisit.addEventListener("click", async () => {
-                           const res = await axios.post('http://localhost:3000/visit', {
-                              "doctor": doctor.value,
-                              "targetVisit": targetVisit.value,
-                              "description": desc.value,
-                              "urgency": urgency.value,
-                              "name": firstName.value,
-                              "lastname": lastName.value,
-                              "middlename": middleName.value,
-                              "pressure": press.value,
-                              "indexMass": indexMass.value,
-                              "cardiovascularDiseases": cardio.value,
-                              "age": age.value,
-                              "dateOfLastVisit": dateLastVisit.value,
-                              "authorVisit": emailUser,
-                           });
-                           location.reload();
-                        })
-                  
-                        btnCloseVisit.addEventListener("click", () => {
-                           ModalClose.click();
-                           console.log("Modal-Close");
-                        })
-                  
-                        // --------------
-                        const select = document.getElementById('doctor');
-                        const content = {};
-                  
-                        [...select.querySelectorAll('option')]
-                           .forEach(opt => content[opt.value] = document.getElementById(opt.value));
-                  
-                        const onChange = value => {
-                           Object.keys(content).forEach(id => {
-                              content[id].style.display = value === id ? 'block' : 'none';
-                           });
-                        }
-                  
-                        select.addEventListener('change', e => onChange(e.target.value));
-                        onChange('card');
-                  
-                        modal.show();
+               changeForm.addEventListener("click", () => {
+                  root.append(modal.render(visit.form))
+                  const visitTemplate = document.getElementById("visit-template");
+                  const addVisitForm = visitTemplate.content.children["visit-form"].cloneNode(true);
+                  const btnCreateVisit = document.getElementById("create-visit");
+                  const btnCloseVisit = document.getElementById("close-visit");
+                  // visit-form-id
+                  const doctor = document.getElementById("doctor");
+                  const targetVisit = document.getElementById("visit-target");
+                  const desc = document.getElementById("description");
+                  const urgency = document.getElementById("urgency");
+                  const firstName = document.getElementById("name");
+                  const lastName = document.getElementById("last-name");
+                  const middleName = document.getElementById("middle-name");
+                  const press = document.getElementById("pressure");
+                  const indexMass = document.getElementById("index-mass");
+                  const cardio = document.getElementById("cardiovascular-diseases");
+                  const age = document.getElementById("age");
+                  const dateLastVisit = document.getElementById("start");
+                  const ModalClose = document.getElementById("modal-close");
+
+                  btnCreateVisit.addEventListener("click", async () => {
+
+                     axios.delete("http://localhost:3000/visit/" + e.id);
+
+                     console.log("лох");
+
+
+                     location.reload();
+                     const res = await axios.post('http://localhost:3000/visit', {
+                        "doctor": doctor.value,
+                        "targetVisit": targetVisit.value,
+                        "description": desc.value,
+                        "urgency": urgency.value,
+                        "name": firstName.value,
+                        "lastname": lastName.value,
+                        "middlename": middleName.value,
+                        "pressure": press.value,
+                        "indexMass": indexMass.value,
+                        "cardiovascularDiseases": cardio.value,
+                        "age": age.value,
+                        "dateOfLastVisit": dateLastVisit.value,
+                        "authorVisit": emailUser,
+
                      });
-                  
-               
-             
+                  })
+
+                  btnCloseVisit.addEventListener("click", () => {
+                     ModalClose.click();
+                     console.log("Modal-Close");
+                  })
+
+                  // --------------
+                  const select = document.getElementById('doctor');
+                  const content = {};
+
+                  [...select.querySelectorAll('option')]
+                  .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+
+                  const onChange = value => {
+                     Object.keys(content).forEach(id => {
+                        content[id].style.display = value === id ? 'block' : 'none';
+                     });
+                  }
+
+                  select.addEventListener('change', e => onChange(e.target.value));
+                  onChange('card');
+
+                  modal.show();
+               });
+
+
+
 
 
                function removeElem(delElem, attribute, attributeName) {
-                    if (!(delElem && attribute && attributeName)) return;
-                    return function(e) {
-                      let target = e.target;
-                      if (!(target.hasAttribute(attribute) ?
-                          (target.getAttribute(attribute) === attributeName ? true : false) : false)) return;
-                      let elem = target;
-                 
-                      while (target != this) {
+                  if (!(delElem && attribute && attributeName)) return;
+                  return function (e) {
+                     let target = e.target;
+                     if (!(target.hasAttribute(attribute) ?
+                           (target.getAttribute(attribute) === attributeName ? true : false) : false)) return;
+                     let elem = target;
+
+                     while (target != this) {
                         if (target.classList.contains(delElem)) {
-                          target.remove();
-                           
-                          return;
+                           target.remove();
+
+                           return;
                         }
                         target = target.parentNode;
-                      }
-                      return;
-                    };
-                  }
-                  
-                  
-                  document.addEventListener("click", removeElem("card", "data-del", "delete"));
+                     }
+                     return;
+                  };
+               }
+
+
+               document.addEventListener("click", removeElem("card", "data-del", "delete"));
             }
          });
       })
@@ -249,7 +259,7 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
       const content = {};
 
       [...select.querySelectorAll('option')]
-         .forEach(opt => content[opt.value] = document.getElementById(opt.value));
+      .forEach(opt => content[opt.value] = document.getElementById(opt.value));
 
       const onChange = value => {
          Object.keys(content).forEach(id => {
