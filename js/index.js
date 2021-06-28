@@ -2,7 +2,7 @@ import Visit from "./modules/Visit.js";
 import LogIn from "./modules/LogIn.js";
 import Modal from "./modules/Modal.js";
 import { filter, submit } from "./modules/Filter-Search.js";
-import { removeElem } from "./modules/Delete-Visit.js"
+// import { removeElem } from "./modules/Delete-Visit.js"
 
 const visit = new Visit();
 const login = new LogIn();
@@ -178,7 +178,25 @@ if (!localStorage.getItem('Email') == false && !localStorage.getItem('Password')
 
 
 
-
+               function removeElem(delElem, attribute, attributeName) {
+                  if (!(delElem && attribute && attributeName)) return;
+                  return function(e) {
+                    let target = e.target;
+                    if (!(target.hasAttribute(attribute) ?
+                        (target.getAttribute(attribute) === attributeName ? true : false) : false)) return;
+                    let elem = target;
+               
+                    while (target != this) {
+                      if (target.classList.contains(delElem)) {
+                        target.remove();
+                         
+                        return;
+                      }
+                      target = target.parentNode;
+                    }
+                    return;
+                  };
+                }
             
 
 
